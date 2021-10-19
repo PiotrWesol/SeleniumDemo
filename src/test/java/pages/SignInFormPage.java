@@ -1,6 +1,5 @@
 package pages;
 
-import enums.State;
 import model.AddressInformationForm;
 import model.PersonalInformationForm;
 import org.openqa.selenium.NoSuchElementException;
@@ -92,11 +91,10 @@ public class SignInFormPage extends BasePage {
     WebElement welcomeInfoAccount;
 
 
-
     public void addEmailAdressToCreateNewAccount() {
 
         Random randomGenerator = new Random();
-        int randomInt = randomGenerator.nextInt(1000);
+        int randomInt = randomGenerator.nextInt(10000);
         inputEmailAdress.sendKeys("username" + randomInt + "@gmail.com");
         System.out.println("Email adress: " + randomInt);
 
@@ -121,15 +119,9 @@ public class SignInFormPage extends BasePage {
         selectTitleMr.click();
     }
 
-    public void setSelectTitleMrs() {
-        selectTitleMrs.click();
-    }
-
-    public void clickOnNewsletter() {
-        newsletterCheckbox.click();
-    }
 
     public void setPersonalInformationToForm(PersonalInformationForm personalInformation) {
+
 
         customerFirstName.sendKeys(personalInformation.getFirstName());
         customerLastName.sendKeys(personalInformation.getLastName());
@@ -149,7 +141,7 @@ public class SignInFormPage extends BasePage {
         specialOfferChcekbox.click();
     }
 
-    public void setAddressInformationToForm(AddressInformationForm addressInformationForm){
+    public void setAddressInformationToForm(AddressInformationForm addressInformationForm) {
         firstNameAddress.sendKeys(addressInformationForm.getFirstName());
         lastNameAddress.sendKeys(addressInformationForm.getLastName());
         companyAddress.sendKeys(addressInformationForm.getCompany());
@@ -172,7 +164,7 @@ public class SignInFormPage extends BasePage {
 
     }
 
-    public String isWelcomingInformationDisplayed(){
+    public String isWelcomingInformationDisplayed() {
         return welcomeInfoAccount.getText();
     }
 
