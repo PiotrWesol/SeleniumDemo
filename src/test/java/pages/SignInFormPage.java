@@ -18,7 +18,7 @@ public class SignInFormPage extends BasePage {
     }
 
     @FindBy(id = "email_create")
-    WebElement inputEmailAdress;
+    WebElement inputEmailAddress;
 
     @FindBy(className = "page-heading")
     WebElement pageHeadingCreateAnAccount;
@@ -95,7 +95,7 @@ public class SignInFormPage extends BasePage {
 
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(10000);
-        inputEmailAdress.sendKeys("username" + randomInt + "@gmail.com");
+        inputEmailAddress.sendKeys("username" + randomInt + "@gmail.com");
         System.out.println("Email adress: " + randomInt);
 
     }
@@ -107,7 +107,6 @@ public class SignInFormPage extends BasePage {
             isDisplayed = pageHeadingCreateAnAccount.isDisplayed();
         } catch (NoSuchElementException e) {
         }
-
         return isDisplayed;
     }
 
@@ -119,9 +118,7 @@ public class SignInFormPage extends BasePage {
         selectTitleMr.click();
     }
 
-
     public void setPersonalInformationToForm(PersonalInformationForm personalInformation) {
-
 
         customerFirstName.sendKeys(personalInformation.getFirstName());
         customerLastName.sendKeys(personalInformation.getLastName());
@@ -132,7 +129,6 @@ public class SignInFormPage extends BasePage {
 
         Select selectMonth = new Select(selectDateMonthOfBirth);
         selectMonth.selectByIndex(personalInformation.getMonth().getValue());
-
 
         Select selectYears = new Select(selectDateYearsOfBirth);
         selectYears.selectByIndex(15);
@@ -160,8 +156,6 @@ public class SignInFormPage extends BasePage {
         phoneMobileAddress.sendKeys(addressInformationForm.getMobilePhone());
 
         submittButtonRegister.click();
-
-
     }
 
     public String isWelcomingInformationDisplayed() {

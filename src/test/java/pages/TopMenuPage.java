@@ -30,7 +30,6 @@ public class TopMenuPage extends BasePage {
         contactUsLink.click();
     }
 
-
     public void clickOnButtonWomen(){
         buttonWomen.click();
     }

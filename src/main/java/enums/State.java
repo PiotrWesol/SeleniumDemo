@@ -3,8 +3,7 @@ package enums;
 public enum State {
     ALABAMA(1),
     ALASKA(2),
-    ARIZONA(3),
-    ;
+    ARIZONA(3);
 
     private int value;
 

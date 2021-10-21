@@ -1,5 +1,4 @@
 package tests;
-
 import enums.MessageSubject;
 import model.Message;
 import org.junit.jupiter.api.*;

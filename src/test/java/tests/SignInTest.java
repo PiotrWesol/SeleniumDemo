@@ -4,7 +4,6 @@ import enums.Month;
 import enums.State;
 import model.AddressInformationForm;
 import model.PersonalInformationForm;
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -41,7 +40,7 @@ public class SignInTest extends BasteTest{
         signInFormPage.addEmailAdressToCreateNewAccount();
         signInFormPage.clickOnButtonCreateAnAccount();
 
-        Assertions.assertThat(signInFormPage.isDisplayedPageHeading()).isTrue();
+        assertThat(signInFormPage.isDisplayedPageHeading()).isTrue();
 
         signInFormPage.setSelectTitleMr();
 
@@ -49,7 +48,7 @@ public class SignInTest extends BasteTest{
         personalInformationForm.setFirstName("John");
         personalInformationForm.setLastName("Doe");
         personalInformationForm.setPassword("Test123");
-        personalInformationForm.setMonth(Month.June);
+        personalInformationForm.setMonth(Month.JUNE);
 
         signInFormPage.setPersonalInformationToForm(personalInformationForm);
 
@@ -67,7 +66,7 @@ public class SignInTest extends BasteTest{
 
         signInFormPage.setAddressInformationToForm(addressInformationForm);
 
-        Assertions.assertThat(signInFormPage.isWelcomingInformationDisplayed()).isEqualTo("Welcome to your account. Here you can manage all of your personal information and orders.");
+        assertThat(signInFormPage.isWelcomingInformationDisplayed()).isEqualTo("Welcome to your account. Here you can manage all of your personal information and orders.");
 
     }
 
